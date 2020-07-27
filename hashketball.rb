@@ -151,10 +151,33 @@ end
 end 
 
 def team_colors(team_name)
-  game_hash.each do |team_data|
-    if team_name == team_data[:team_name]
-      return team_data[:colors]
+  game_hash.each do |team_data, data|
+    if team_name == data[:team_name]
+      return data[:colors]
   end 
 end 
 end 
+
+def team_names
+  game_hash.map do |location, team_data|
+    
+  
+    
+       team_data[:team_name]
+  end 
+end
+
+def player_numbers(team_name)
+  game_hash.map do |location, team_data|
+    
+    if team_name == team_data[:team_name]
+      
+     team_data[:players].map do |player|
+    #binding.pry
+    player[:number]
+  end 
+end 
+end 
+end 
+  
   
